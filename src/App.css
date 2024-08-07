@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.widthGrid  {
+  grid-template-columns : repeat(5, 1fr);
+}
+
+@media screen and (max-width: 768px) {
+  .widthGrid {
+    grid-template-columns : repeat(3, 1fr);
+  }
+
+  .gridContainer { 
+    width: 90% !important; 
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-gap: 20px;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  margin: auto;
+  width: 70%;
+}
+
+.gridItem {
+  position: relative;
+  transition: transform 0.3s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  background-color: rgb(250, 255, 255);
+  width: 15%px;
+  height: 80px;
+  padding: 10px;
+  border: solid 1px #91969e;
+  border-radius: 7px;
+  text-align: center;
+  align-content: center;
+  box-shadow: 5px 5px rgb(180, 224, 224);
+}
+
+#backSide {
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+  transform: rotateY(180deg);
+  background-image: linear-gradient(to bottom right, rgb(112, 242, 168), rgb(51, 239, 230));;
+  box-shadow: -5px 5px rgb(150, 238, 180);
+  font-size: 35px;
+}
+
+#frontSide {
+  /*background-image: url("img\\cardImage.jpg");*/
+  background-image: linear-gradient(to bottom right, rgb(112, 190, 242), rgb(51, 239, 230));
+  background-size: 100% 100%;
+}
+
+#text {
+  display: none;
+}
+
+#backSide #text {
+  display: block;
+  transform: rotateY(180deg);
+}
